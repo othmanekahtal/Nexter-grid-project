@@ -53,7 +53,10 @@ body {
   cursor: pointer;
   font-weight: 400;
   font-family: inherit;
-  font-size: 1.5rem; }
+  font-size: 1.5rem;
+  transition: all 0.25s; }
+  .btn:hover {
+    background-color: #b28451; }
 
 .sidebar {
   grid-column: sidebar-start / sidebar-end; }
@@ -86,25 +89,42 @@ body {
       fill: #c69963; }
 
 .testimonials__img {
-  grid-column: full-grid-start / col-end 4; }
+  grid-column: full-grid-start / col-end 4;
+  background-image: linear-gradient(to right, rgba(198, 153, 99, 0.55), rgba(198, 153, 99, 0.55)), url("../img/back.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: grid;
+  align-items: center;
+  grid-template-columns: [start-grid-col] 1fr [start-center-col] repeat(4, [start-col] 1fr [end-col]) [end-center-col] 1fr [end-grid-col];
+  grid-template-rows: [start-grid-row] 1fr [start-center-row] repeat(4, [start-row] 1fr [end-row]) [end-center-row] 1fr [end-grid-row]; }
+  .testimonials__img .img-testimonials--1 {
+    grid-column: start-center-col / end-center-col;
+    grid-row: start-center-row / end-center-row;
+    width: 100%; }
+  .testimonials__img .img-testimonials--2 {
+    width: 115%;
+    box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.4);
+    grid-column: end-col 2 / end-grid-col;
+    grid-row: end-row 1 / end-grid-row;
+    position: relative;
+    z-index: 1; }
 
 .testimonials__content {
   background-color: #f9f7f6;
   grid-column: col-end 4 / full-grid-end;
-  display: grid;
-  grid-template-rows: min-content;
-  grid-template-columns: minmax(min-content, 40rem);
-  align-content: center;
-  justify-content: center; }
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 6rem 8vw; }
   .testimonials__content .heading-2--testimonials {
     margin-bottom: 1rem; }
   .testimonials__content p {
     font-style: italic;
     font-size: 1.5rem;
-    margin: 2rem 0 4rem; }
+    margin: 3rem 0 4rem; }
   .testimonials__content .btn {
-    align-self: center;
-    justify-self: flex-start;
     padding: 1.8rem 3rem; }
 
 .pricing {

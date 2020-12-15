@@ -49,4 +49,8 @@ body {
   font-weight: 400;
   font-family: inherit;
   font-size: 1.5rem;
+  transition: all 0.25s;
+  &:hover {
+    background-color: $color-primary-dark;
+  }
 }
