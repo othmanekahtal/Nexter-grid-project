@@ -1,0 +1,52 @@
+body {
+  font-family: $font-primary;
+  font-weight: 300;
+  color: $color-grey-dark-1;
+  line-height: 1.6;
+}
+
+%heading {
+  font-family: $font-display;
+  font-weight: 400;
+}
+.heading-1 {
+  @extend %heading;
+}
+.heading-2 {
+  @extend %heading;
+  font-size: 4rem;
+  font-style: italic;
+  line-height: 1;
+}
+.heading-3 {
+  @extend %heading;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+
+  &--primary-color {
+    color: $color-primary;
+  }
+}
+.heading-4 {
+  @extend %heading;
+  font-size: 1.9rem;
+}
+.feature__heading {
+  color: $color-secondary;
+}
+.feature__text {
+  font-size: 1.7rem;
+}
+
+.btn {
+  text-transform: uppercase;
+  background-color: $color-primary;
+  color: $color-grey-light-1;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: 400;
+  font-family: inherit;
+  font-size: 1.5rem;
+}

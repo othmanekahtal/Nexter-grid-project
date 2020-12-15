@@ -1,0 +1,27 @@
+.testimonials {
+  &__img {
+    grid-column: full-grid-start / col-end 4;
+  }
+  &__content {
+    background-color: $color-grey-light-1;
+    grid-column: col-end 4 / full-grid-end;
+    display: grid;
+    grid-template-rows: min-content;
+    grid-template-columns: minmax(min-content, 40rem);
+    align-content: center;
+    justify-content: center;
+    .heading-2--testimonials {
+      margin-bottom: 1rem;
+    }
+    p {
+      font-style: italic;
+      font-size: 1.5rem;
+      margin: 2rem 0 4rem;
+    }
+    .btn {
+      align-self: center;
+      justify-self: flex-start;
+      padding: 1.8rem 3rem;
+    }
+  }
+}
