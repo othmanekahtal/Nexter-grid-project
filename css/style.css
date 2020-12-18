@@ -247,4 +247,31 @@ body {
     grid-row-end: span 2; }
 
 .footer {
-  grid-column: full-grid-start / full-grid-end; }
+  grid-column: full-grid-start / full-grid-end;
+  background-color: #101d2c;
+  color: #aaa;
+  font-size: 1.4rem;
+  padding: 10rem;
+  text-align: center; }
+  .footer__nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-gap: 2rem;
+    list-style-type: none;
+    align-items: center;
+    margin-bottom: 6rem; }
+  .footer .nav__item {
+    text-align: center;
+    transition: all 0.2s linear; }
+    .footer .nav__item:hover {
+      transform: translateY(-2px) scale(1.05);
+      background-color: rgba(255, 255, 255, 0.05); }
+  .footer__link {
+    display: block;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    padding: 1.5rem; }
+  .footer__copyright {
+    width: 75%;
+    margin: 0 auto; }
