@@ -1,0 +1,63 @@
+.homes {
+  grid-column: grid-start / grid-end;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(27.5rem, 1fr));
+  grid-gap: 7.5rem 6rem;
+  margin: 15rem 0;
+  justify-content: center;
+}
+.home-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 3.5rem 0;
+  background-color: $color-grey-light-1;
+  & > div[class^="home__"] {
+    margin-left: 2rem;
+    place-self: flex-end flex-start;
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    font-size: 1.5rem;
+  }
+  .home__img {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    width: 100%;
+    overflow: hidden;
+  }
+  .home__like {
+    margin: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: $color-primary;
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    justify-self: flex-end;
+    position: relative;
+    z-index: 1;
+  }
+  .home__title {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    place-self: flex-end center;
+    z-index: 2;
+    color: $color-grey-light-1;
+    transform: translateY(50%);
+    position: relative;
+  }
+  .home__location {
+    padding-top: 2.5rem;
+  }
+  .btn--home {
+    grid-column: 1/-1;
+    justify-self: stretch;
+    font-size: 1.6rem;
+    padding: 1.6rem 0;
+  }
+  .icon {
+    width: 2rem;
+    height: 2rem;
+    fill: $color-primary;
+    margin-right: 1rem;
+  }
+}

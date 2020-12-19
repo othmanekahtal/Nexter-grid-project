@@ -32,6 +32,14 @@ body {
   @extend %heading;
   font-size: 1.9rem;
 }
+.home__title {
+  @extend %heading;
+  background-color: $color-secondary;
+  width: 80%;
+  padding: 1.4rem 0;
+  font-size: 1.5rem;
+  text-align: center;
+}
 .feature__heading {
   color: $color-secondary;
 }
@@ -50,6 +58,9 @@ body {
   font-family: inherit;
   font-size: 1.5rem;
   transition: all 0.25s;
+  &--home {
+    padding: 1.2rem 3rem;
+  }
   &:hover {
     background-color: $color-primary-dark;
   }

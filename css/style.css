@@ -19,7 +19,7 @@ body {
   color: #54483a;
   line-height: 1.6; }
 
-.heading-1, .heading-2, .heading-3, .heading-4 {
+.heading-1, .heading-2, .heading-3, .heading-4, .home__title {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 400; }
 
@@ -38,6 +38,13 @@ body {
 .heading-4 {
   font-size: 1.9rem; }
 
+.home__title {
+  background-color: #101d2c;
+  width: 80%;
+  padding: 1.4rem 0;
+  font-size: 1.5rem;
+  text-align: center; }
+
 .feature__heading {
   color: #101d2c; }
 
@@ -55,11 +62,16 @@ body {
   font-family: inherit;
   font-size: 1.5rem;
   transition: all 0.25s; }
+  .btn--home {
+    padding: 1.2rem 3rem; }
   .btn:hover {
     background-color: #b28451; }
 
 .sidebar {
-  grid-column: sidebar-start / sidebar-end; }
+  grid-column: sidebar-start / sidebar-end;
+  grid-row-start: 1;
+  grid-row-end: -1;
+  background-color: #c69963; }
 
 .header {
   grid-column: full-grid-start / col-end 6; }
@@ -127,8 +139,61 @@ body {
   .testimonials__content .btn {
     padding: 1.8rem 3rem; }
 
-.pricing {
-  grid-column: grid-start / grid-end; }
+.homes {
+  grid-column: grid-start / grid-end;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(27.5rem, 1fr));
+  grid-gap: 7.5rem 6rem;
+  margin: 15rem 0;
+  justify-content: center; }
+
+.home-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 3.5rem 0;
+  background-color: #f9f7f6; }
+  .home-box > div[class^="home__"] {
+    margin-left: 2rem;
+    place-self: flex-end flex-start;
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    font-size: 1.5rem; }
+  .home-box .home__img {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    width: 100%;
+    overflow: hidden; }
+  .home-box .home__like {
+    margin: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: #c69963;
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    justify-self: flex-end;
+    position: relative;
+    z-index: 1; }
+  .home-box .home__title {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    place-self: flex-end center;
+    z-index: 2;
+    color: #f9f7f6;
+    transform: translateY(50%);
+    position: relative; }
+  .home-box .home__location {
+    padding-top: 2.5rem; }
+  .home-box .btn--home {
+    grid-column: 1/-1;
+    justify-self: stretch;
+    font-size: 1.6rem;
+    padding: 1.6rem 0; }
+  .home-box .icon {
+    width: 2rem;
+    height: 2rem;
+    fill: #c69963;
+    margin-right: 1rem; }
 
 .gallery {
   grid-column: full-grid-start / full-grid-end; }
