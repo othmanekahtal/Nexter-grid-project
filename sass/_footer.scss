@@ -16,7 +16,8 @@
   .nav__item {
     text-align: center;
     transition: all 0.2s linear;
-    &:hover {
+    &:hover,
+    &:active {
       transform: translateY(-2px) scale(1.05);
       background-color: rgba(255, 255, 255, 0.05);
     }
