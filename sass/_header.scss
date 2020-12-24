@@ -1,3 +1,50 @@
 .header {
   grid-column: full-grid-start / col-end 6;
+  background: linear-gradient(rgba(16, 29, 44, 0.93), rgba(16, 29, 44, 0.93)),
+    url(../img/hero.jpeg);
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  grid-template-rows: 20% repeat(2, min-content) 20% repeat(2, min-content);
+  padding: 3.2rem 7.5rem;
+}
+.logo-box {
+  place-self: start center;
+  .logo {
+    height: 3.5rem;
+  }
+}
+.see__logo-company {
+  &::before,
+  &::after {
+    content: "";
+    height: 1px;
+    background-color: $color-grey-light-2;
+    position: absolute;
+    width: 45%;
+  }
+  &::before {
+    left: 0;
+    top: 50%;
+  }
+  &::after {
+    right: 0;
+    top: 50%;
+  }
+}
+
+.logo-company__list {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 1.5rem;
+  align-items: center;
+  justify-items: center;
+}
+.logo-company {
+  display: block;
+}
+.company-img {
+  opacity: 0.7;
+  height: 2.5rem;
 }
