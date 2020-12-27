@@ -115,6 +115,24 @@ body {
   grid-row-start: 1;
   grid-row-end: -1;
   background-color: #c69963; }
+  .sidebar-icon {
+    background-color: white;
+    position: relative;
+    width: 4.5rem;
+    margin: 4rem auto;
+    display: block;
+    height: 2px; }
+    .sidebar-icon::after, .sidebar-icon::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: inherit;
+      left: 0; }
+    .sidebar-icon::before {
+      top: -1.5rem; }
+    .sidebar-icon::after {
+      top: 1.5rem; }
 
 .header {
   grid-column: full-grid-start / col-end 6;
