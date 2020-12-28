@@ -4,6 +4,7 @@
   grid-row-end: -1;
   background-color: $color-primary;
   &-icon {
+    all: unset;
     background-color: white;
     position: relative;
     width: 4.5rem;
@@ -18,6 +19,7 @@
       height: 100%;
       background-color: inherit;
       left: 0;
+      display: block;
     }
     &::before {
       top: -1.5rem;

@@ -5,34 +5,31 @@
   background-size: cover;
   background-position: center;
   display: grid;
-  grid-template-rows: 20% repeat(2, min-content) 20% repeat(2, min-content);
-  padding: 3.2rem 7.5rem;
+  grid-template-rows: 1fr min-content 6rem 1fr repeat(2, min-content);
+  padding: 7.5rem;
+  padding-top: 3.75rem;
 }
 .logo-box {
   place-self: start center;
   .logo {
-    height: 3.5rem;
+    height: 3rem;
   }
 }
 .see__logo-company {
+  display: grid;
+  align-items: center;
+  justify-content: space-between;
+  grid-column-gap: 2rem;
+  grid-template-columns: 1fr max-content 1fr;
+  color: $color-grey-light-2;
   &::before,
   &::after {
+    justify-self: stretch;
     content: "";
     height: 1px;
-    background-color: $color-grey-light-2;
-    position: absolute;
-    width: 45%;
-  }
-  &::before {
-    left: 0;
-    top: 50%;
-  }
-  &::after {
-    right: 0;
-    top: 50%;
+    background-color: currentColor;
   }
 }
-
 .logo-company__list {
   margin-top: 2.5rem;
   display: grid;
@@ -41,10 +38,9 @@
   align-items: center;
   justify-items: center;
 }
-.logo-company {
-  display: block;
-}
 .company-img {
   opacity: 0.7;
+  // or
+  // filter: brightness(70% );
   height: 2.5rem;
 }
