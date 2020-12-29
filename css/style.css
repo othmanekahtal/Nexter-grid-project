@@ -1,3 +1,9 @@
+/*
+phone : 600px : 37.5em
+tab-port : 600px-1000px :62.5em
+tab-land :1000px - 1200px :75em
+big desktop : 2000px ++ :125em
+*/
 *,
 *::after,
 *::before {
@@ -7,11 +13,75 @@
 
 html {
   font-size: 62.5%; }
+  @media only screen and (max-width: 37.5em) {
+    html {
+      font-size: 95%; } }
+  @media only screen and (max-width: 62.5em) {
+    html {
+      font-size: 95%; } }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 95%; } }
+  @media only screen and (min-width: 125em) {
+    html {
+      font-size: 95%; } }
+  @media only screen and (max-width: 37.5em) {
+    html {
+      font-size: 56.5%; } }
+  @media only screen and (max-width: 62.5em) {
+    html {
+      font-size: 56.5%; } }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 56.5%; } }
+  @media only screen and (min-width: 125em) {
+    html {
+      font-size: 56.5%; } }
+  @media only screen and (max-width: 37.5em) {
+    html {
+      font-size: 52.5%; } }
+  @media only screen and (max-width: 62.5em) {
+    html {
+      font-size: 52.5%; } }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 52.5%; } }
+  @media only screen and (min-width: 125em) {
+    html {
+      font-size: 52.5%; } }
+  @media only screen and (max-width: 37.5em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (max-width: 62.5em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (min-width: 125em) {
+    html {
+      font-size: 50%; } }
 
 .container {
   display: grid;
   grid-template-rows: 80vh auto 40vw repeat(3, min-content);
   grid-template-columns: [sidebar-start] 8rem [sidebar-end full-grid-start] minmax(6rem, 1fr) [grid-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [grid-end] minmax(6rem, 1fr) [full-grid-end]; }
+  @media only screen and (max-width: 37.5em) {
+    .container {
+      grid-template-rows: [sidebar] 8rem [end-sidebar] 80vh auto 40vw repeat(3, min-content);
+      grid-template-columns: [full-grid-start] minmax(6rem, 1fr) [grid-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [grid-end] minmax(6rem, 1fr) [full-grid-end]; } }
+  @media only screen and (max-width: 62.5em) {
+    .container {
+      grid-template-rows: [sidebar] 8rem [end-sidebar] 80vh auto 40vw repeat(3, min-content);
+      grid-template-columns: [full-grid-start] minmax(6rem, 1fr) [grid-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [grid-end] minmax(6rem, 1fr) [full-grid-end]; } }
+  @media only screen and (max-width: 75em) {
+    .container {
+      grid-template-rows: [sidebar] 8rem [end-sidebar] 80vh auto 40vw repeat(3, min-content);
+      grid-template-columns: [full-grid-start] minmax(6rem, 1fr) [grid-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [grid-end] minmax(6rem, 1fr) [full-grid-end]; } }
+  @media only screen and (min-width: 125em) {
+    .container {
+      grid-template-rows: [sidebar] 8rem [end-sidebar] 80vh auto 40vw repeat(3, min-content);
+      grid-template-columns: [full-grid-start] minmax(6rem, 1fr) [grid-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [grid-end] minmax(6rem, 1fr) [full-grid-end]; } }
 
 body {
   font-family: "Nunito", sans-serif;
@@ -136,13 +206,53 @@ body {
     .sidebar-icon::after {
       top: 1.5rem; }
 
+@media only screen and (max-width: 37.5em) {
+  .sidebar {
+    grid-column: 1 / -1;
+    grid-row-start: 1;
+    grid-row-end: unset;
+    display: grid;
+    justify-content: end; }
+    .sidebar-icon {
+      margin: 4rem; } }
+
+@media only screen and (max-width: 62.5em) {
+  .sidebar {
+    grid-column: 1 / -1;
+    grid-row-start: 1;
+    grid-row-end: unset;
+    display: grid;
+    justify-content: end; }
+    .sidebar-icon {
+      margin: 4rem; } }
+
+@media only screen and (max-width: 75em) {
+  .sidebar {
+    grid-column: 1 / -1;
+    grid-row-start: 1;
+    grid-row-end: unset;
+    display: grid;
+    justify-content: end; }
+    .sidebar-icon {
+      margin: 4rem; } }
+
+@media only screen and (min-width: 125em) {
+  .sidebar {
+    grid-column: 1 / -1;
+    grid-row-start: 1;
+    grid-row-end: unset;
+    display: grid;
+    justify-content: end; }
+    .sidebar-icon {
+      margin: 4rem; } }
+
 .header {
   grid-column: full-grid-start / col-end 6;
   background: linear-gradient(rgba(16, 29, 44, 0.93), rgba(16, 29, 44, 0.93)), url(../img/hero.jpeg);
   background-size: cover;
   background-position: center;
   display: grid;
-  grid-template-rows: 1fr min-content 6rem 1fr repeat(2, min-content);
+  grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr repeat(2, min-content);
   padding: 7.5rem;
   padding-top: 3.75rem; }
 
@@ -174,7 +284,8 @@ body {
 
 .company-img {
   opacity: 0.7;
-  height: 2.5rem; }
+  max-height: 2.5rem;
+  max-width: 100%; }
 
 .realtors {
   grid-column: col-start 7/ -1;

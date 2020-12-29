@@ -29,3 +29,16 @@
     }
   }
 }
+
+@include respond(land-tab) {
+  .sidebar {
+    grid-column: 1 / -1;
+    grid-row-start: 1;
+    grid-row-end: unset;
+    display: grid;
+    justify-content: end;
+    &-icon {
+      margin: 4rem;
+    }
+  }
+}
