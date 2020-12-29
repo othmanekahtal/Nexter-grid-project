@@ -6,11 +6,18 @@
   grid-template-rows: repeat(2, min-content);
   padding: 3rem;
   place-content: center;
+  @include respond(sm-tab) {
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+  }
 }
 .realtors__list {
   display: grid;
   grid-row-gap: 5vh;
   grid-column-gap: 2rem;
+  @include respond(sm-tab) {
+    grid-auto-flow: column;
+  }
 }
 .realtor-box {
   display: grid;
@@ -21,4 +28,19 @@
 .realtor__img-avatar {
   width: 7rem;
   border-radius: 50%;
+}
+
+@include respond(sm-tab) {
+  .realtors__list {
+    grid-auto-flow: column;
+  }
+  .realtors {
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+  }
+}
+@include respond(phone) {
+  .realtors__list {
+    grid-auto-flow: row;
+  }
 }

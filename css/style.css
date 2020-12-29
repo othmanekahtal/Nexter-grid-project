@@ -1,5 +1,6 @@
 /*
 phone : 600px : 37.5em
+sm-tab : 600px - 800px
 tab-port : 600px-1000px :62.5em
 tab-land :1000px - 1200px :75em
 big desktop : 2000px ++ :125em
@@ -13,52 +14,16 @@ big desktop : 2000px ++ :125em
 
 html {
   font-size: 62.5%; }
-  @media only screen and (max-width: 37.5em) {
-    html {
-      font-size: 95%; } }
-  @media only screen and (max-width: 62.5em) {
+  @media only screen and (min-width: 125em) {
     html {
       font-size: 95%; } }
   @media only screen and (max-width: 75em) {
     html {
-      font-size: 95%; } }
-  @media only screen and (min-width: 125em) {
-    html {
-      font-size: 95%; } }
-  @media only screen and (max-width: 37.5em) {
-    html {
       font-size: 56.5%; } }
   @media only screen and (max-width: 62.5em) {
     html {
-      font-size: 56.5%; } }
-  @media only screen and (max-width: 75em) {
-    html {
-      font-size: 56.5%; } }
-  @media only screen and (min-width: 125em) {
-    html {
-      font-size: 56.5%; } }
-  @media only screen and (max-width: 37.5em) {
-    html {
-      font-size: 52.5%; } }
-  @media only screen and (max-width: 62.5em) {
-    html {
-      font-size: 52.5%; } }
-  @media only screen and (max-width: 75em) {
-    html {
-      font-size: 52.5%; } }
-  @media only screen and (min-width: 125em) {
-    html {
       font-size: 52.5%; } }
   @media only screen and (max-width: 37.5em) {
-    html {
-      font-size: 50%; } }
-  @media only screen and (max-width: 62.5em) {
-    html {
-      font-size: 50%; } }
-  @media only screen and (max-width: 75em) {
-    html {
-      font-size: 50%; } }
-  @media only screen and (min-width: 125em) {
     html {
       font-size: 50%; } }
 
@@ -66,21 +31,13 @@ html {
   display: grid;
   grid-template-rows: 80vh auto 40vw repeat(3, min-content);
   grid-template-columns: [sidebar-start] 8rem [sidebar-end full-grid-start] minmax(6rem, 1fr) [grid-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [grid-end] minmax(6rem, 1fr) [full-grid-end]; }
-  @media only screen and (max-width: 37.5em) {
-    .container {
-      grid-template-rows: [sidebar] 8rem [end-sidebar] 80vh auto 40vw repeat(3, min-content);
-      grid-template-columns: [full-grid-start] minmax(6rem, 1fr) [grid-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [grid-end] minmax(6rem, 1fr) [full-grid-end]; } }
   @media only screen and (max-width: 62.5em) {
     .container {
-      grid-template-rows: [sidebar] 8rem [end-sidebar] 80vh auto 40vw repeat(3, min-content);
+      grid-template-rows: [sidebar] 6rem [end-sidebar] 80vh auto 40vw repeat(3, min-content);
       grid-template-columns: [full-grid-start] minmax(6rem, 1fr) [grid-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [grid-end] minmax(6rem, 1fr) [full-grid-end]; } }
-  @media only screen and (max-width: 75em) {
+  @media only screen and (max-width: 50em) {
     .container {
-      grid-template-rows: [sidebar] 8rem [end-sidebar] 80vh auto 40vw repeat(3, min-content);
-      grid-template-columns: [full-grid-start] minmax(6rem, 1fr) [grid-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [grid-end] minmax(6rem, 1fr) [full-grid-end]; } }
-  @media only screen and (min-width: 125em) {
-    .container {
-      grid-template-rows: [sidebar] 8rem [end-sidebar] 80vh auto 40vw repeat(3, min-content);
+      grid-template-rows: [sidebar] 6rem [end-sidebar] 80vh repeat(2, auto) repeat(4, min-content);
       grid-template-columns: [full-grid-start] minmax(6rem, 1fr) [grid-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [grid-end] minmax(6rem, 1fr) [full-grid-end]; } }
 
 body {
@@ -206,45 +163,21 @@ body {
     .sidebar-icon::after {
       top: 1.5rem; }
 
-@media only screen and (max-width: 37.5em) {
-  .sidebar {
-    grid-column: 1 / -1;
-    grid-row-start: 1;
-    grid-row-end: unset;
-    display: grid;
-    justify-content: end; }
-    .sidebar-icon {
-      margin: 4rem; } }
-
 @media only screen and (max-width: 62.5em) {
   .sidebar {
     grid-column: 1 / -1;
     grid-row-start: 1;
     grid-row-end: unset;
     display: grid;
-    justify-content: end; }
+    justify-content: end;
+    align-items: center; }
     .sidebar-icon {
-      margin: 4rem; } }
-
-@media only screen and (max-width: 75em) {
-  .sidebar {
-    grid-column: 1 / -1;
-    grid-row-start: 1;
-    grid-row-end: unset;
-    display: grid;
-    justify-content: end; }
-    .sidebar-icon {
-      margin: 4rem; } }
-
-@media only screen and (min-width: 125em) {
-  .sidebar {
-    grid-column: 1 / -1;
-    grid-row-start: 1;
-    grid-row-end: unset;
-    display: grid;
-    justify-content: end; }
-    .sidebar-icon {
-      margin: 4rem; } }
+      margin: unset;
+      margin-right: 2rem; }
+      .sidebar-icon::before {
+        top: -1.25rem; }
+      .sidebar-icon::after {
+        top: 1.25rem; } }
 
 .header {
   grid-column: full-grid-start / col-end 6;
@@ -255,6 +188,9 @@ body {
   grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr repeat(2, min-content);
   padding: 7.5rem;
   padding-top: 3.75rem; }
+  @media only screen and (max-width: 50em) {
+    .header {
+      grid-column: 1 / -1; } }
 
 .logo-box {
   place-self: start center; }
@@ -295,11 +231,18 @@ body {
   grid-template-rows: repeat(2, min-content);
   padding: 3rem;
   place-content: center; }
+  @media only screen and (max-width: 50em) {
+    .realtors {
+      grid-column: 1 / -1;
+      grid-row: 3 / 4; } }
 
 .realtors__list {
   display: grid;
   grid-row-gap: 5vh;
   grid-column-gap: 2rem; }
+  @media only screen and (max-width: 50em) {
+    .realtors__list {
+      grid-auto-flow: column; } }
 
 .realtor-box {
   display: grid;
@@ -310,6 +253,17 @@ body {
 .realtor__img-avatar {
   width: 7rem;
   border-radius: 50%; }
+
+@media only screen and (max-width: 50em) {
+  .realtors__list {
+    grid-auto-flow: column; }
+  .realtors {
+    grid-column: 1 / -1;
+    grid-row: 3 / 4; } }
+
+@media only screen and (max-width: 37.5em) {
+  .realtors__list {
+    grid-auto-flow: row; } }
 
 .features {
   grid-column: grid-start / grid-end;
@@ -370,6 +324,18 @@ body {
     margin: 3rem 0 4rem; }
   .testimonials__content .btn {
     padding: 1.8rem 3rem; }
+
+@media only screen and (max-width: 50em) {
+  .testimonials__img {
+    grid-column: 1 / -1;
+    grid-row: 6 / 7; }
+  .testimonials__content {
+    background-color: #f9f7f6;
+    grid-column: 1 / -1;
+    grid-row: 5 / 6; }
+  .img-testimonials--2 {
+    width: 100% !important;
+    grid-row: 1 / 8 !important; } }
 
 .homes {
   grid-column: grid-start / grid-end;
@@ -507,3 +473,13 @@ body {
   .footer__copyright {
     width: 75%;
     margin: 0 auto; }
+
+@media only screen and (max-width: 37.5em) {
+  .footer {
+    padding: 6rem !important; }
+    .footer__nav {
+      margin-bottom: 4rem; }
+    .footer__link {
+      padding: 1.2rem; }
+    .footer__copyright {
+      width: 100%; } }

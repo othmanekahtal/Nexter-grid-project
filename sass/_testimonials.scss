@@ -61,3 +61,21 @@
     }
   }
 }
+
+@include respond(sm-tab) {
+  .testimonials {
+    &__img {
+      grid-column: 1 / -1;
+      grid-row: 6 / 7;
+    }
+    &__content {
+      background-color: $color-grey-light-1;
+      grid-column: 1 / -1;
+      grid-row: 5 / 6;
+    }
+  }
+  .img-testimonials--2 {
+    width: 100% !important;
+    grid-row: 1 / 8 !important;
+  }
+} ;

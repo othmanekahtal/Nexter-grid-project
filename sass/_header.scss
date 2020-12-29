@@ -11,6 +11,10 @@
     );
   padding: 7.5rem;
   padding-top: 3.75rem;
+
+  @include respond(sm-tab) {
+    grid-column: 1 / -1;
+  }
 }
 .logo-box {
   place-self: start center;

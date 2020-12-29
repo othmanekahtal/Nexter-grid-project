@@ -30,15 +30,23 @@
   }
 }
 
-@include respond(land-tab) {
+@include respond(port-tab) {
   .sidebar {
     grid-column: 1 / -1;
     grid-row-start: 1;
     grid-row-end: unset;
     display: grid;
     justify-content: end;
+    align-items: center;
     &-icon {
-      margin: 4rem;
+      margin: unset;
+      margin-right: 2rem;
+      &::before {
+        top: -1.25rem;
+      }
+      &::after {
+        top: 1.25rem;
+      }
     }
   }
 }

@@ -34,3 +34,18 @@
     margin: 0 auto;
   }
 }
+
+@include respond(phone) {
+  .footer {
+    padding: 6rem !important;
+    &__nav {
+      margin-bottom: 4rem;
+    }
+    &__link {
+      padding: 1.2rem;
+    }
+    &__copyright {
+      width: 100%;
+    }
+  }
+}

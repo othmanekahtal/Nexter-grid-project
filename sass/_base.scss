@@ -17,28 +17,34 @@ $font-display: "Josefin Sans", sans-serif;
 // CREATE MEDIA QUERY :
 /*
 phone : 600px : 37.5em
+sm-tab : 600px - 800px
 tab-port : 600px-1000px :62.5em
 tab-land :1000px - 1200px :75em
 big desktop : 2000px ++ :125em
 */
 
 @mixin respond($breakpoint) {
-  @if ($breakpoint= "phone") {
+  @if ($breakpoint == "phone") {
     @media only screen and (max-width: 37.5em) {
       @content;
     }
   }
-  @if ($breakpoint= "port-tab") {
+  @if ($breakpoint == "sm-tab") {
+    @media only screen and (max-width: 50em) {
+      @content;
+    }
+  }
+  @if ($breakpoint == "port-tab") {
     @media only screen and (max-width: 62.5em) {
       @content;
     }
   }
-  @if ($breakpoint = "land-tab") {
+  @if ($breakpoint == "land-tab") {
     @media only screen and (max-width: 75em) {
       @content;
     }
   }
-  @if ($breakpoint = "big-desk") {
+  @if ($breakpoint == "big-desk") {
     @media only screen and (min-width: 125em) {
       @content;
     }
@@ -75,9 +81,19 @@ html {
     [grid-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
     [grid-end] minmax(6rem, 1fr) [full-grid-end];
 
-  @include respond(land-tab) {
-    grid-template-rows: [sidebar] 8rem [end-sidebar] 80vh auto 40vw repeat(
+  @include respond(port-tab) {
+    grid-template-rows: [sidebar] 6rem [end-sidebar] 80vh auto 40vw repeat(
         3,
+        min-content
+      );
+    grid-template-columns:
+      [full-grid-start] minmax(6rem, 1fr)
+      [grid-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+      [grid-end] minmax(6rem, 1fr) [full-grid-end];
+  }
+  @include respond(sm-tab) {
+    grid-template-rows: [sidebar] 6rem [end-sidebar] 80vh repeat(2, auto) repeat(
+        4,
         min-content
       );
     grid-template-columns:
