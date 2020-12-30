@@ -74,6 +74,8 @@ html {
 }
 
 .container {
+  width: 100%;
+  overflow-x: hidden;
   display: grid;
   grid-template-rows: 80vh auto 40vw repeat(3, min-content);
   grid-template-columns:
@@ -92,10 +94,9 @@ html {
       [grid-end] minmax(6rem, 1fr) [full-grid-end];
   }
   @include respond(sm-tab) {
-    grid-template-rows: [sidebar] 6rem [end-sidebar] 80vh repeat(2, auto) repeat(
-        4,
-        min-content
-      );
+    grid-template-rows:
+      [sidebar] 6rem [end-sidebar] calc(100vh - 6rem) repeat(2, auto)
+      repeat(4, min-content);
     grid-template-columns:
       [full-grid-start] minmax(6rem, 1fr)
       [grid-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])

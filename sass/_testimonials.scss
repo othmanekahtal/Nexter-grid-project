@@ -67,6 +67,20 @@
     &__img {
       grid-column: 1 / -1;
       grid-row: 6 / 7;
+
+      grid-template-columns:
+        [start-grid-col] 1fr [start-center-col] repeat(
+          4,
+          [start-col] 1fr [end-col]
+        )
+        [end-center-col] 1fr [end-grid-col];
+      grid-template-rows:
+        [start-grid-row] 2fr [start-center-row] repeat(
+          4,
+          [start-row] 1fr [end-row]
+        )
+        [end-center-row]
+        2fr [end-grid-row];
     }
     &__content {
       background-color: $color-grey-light-1;
@@ -75,7 +89,7 @@
     }
   }
   .img-testimonials--2 {
-    width: 100% !important;
-    grid-row: 1 / 8 !important;
+    width: 85% !important;
+    grid-row: 3 / 5 !important;
   }
 } ;

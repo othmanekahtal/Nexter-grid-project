@@ -28,6 +28,8 @@ html {
       font-size: 50%; } }
 
 .container {
+  width: 100%;
+  overflow-x: hidden;
   display: grid;
   grid-template-rows: 80vh auto 40vw repeat(3, min-content);
   grid-template-columns: [sidebar-start] 8rem [sidebar-end full-grid-start] minmax(6rem, 1fr) [grid-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [grid-end] minmax(6rem, 1fr) [full-grid-end]; }
@@ -37,7 +39,7 @@ html {
       grid-template-columns: [full-grid-start] minmax(6rem, 1fr) [grid-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [grid-end] minmax(6rem, 1fr) [full-grid-end]; } }
   @media only screen and (max-width: 50em) {
     .container {
-      grid-template-rows: [sidebar] 6rem [end-sidebar] 80vh repeat(2, auto) repeat(4, min-content);
+      grid-template-rows: [sidebar] 6rem [end-sidebar] calc(100vh - 6rem) repeat(2, auto) repeat(4, min-content);
       grid-template-columns: [full-grid-start] minmax(6rem, 1fr) [grid-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [grid-end] minmax(6rem, 1fr) [full-grid-end]; } }
 
 body {
@@ -55,6 +57,9 @@ body {
   color: white;
   line-height: 1;
   margin-bottom: 2rem; }
+  @media only screen and (max-width: 50em) {
+    .heading-1 {
+      margin: 5rem 0 !important; } }
 
 .heading-2 {
   font-size: 4rem;
@@ -190,7 +195,9 @@ body {
   padding-top: 3.75rem; }
   @media only screen and (max-width: 50em) {
     .header {
-      grid-column: 1 / -1; } }
+      grid-column: 1 / -1;
+      padding: 4.5rem;
+      padding-top: 5.5rem; } }
 
 .logo-box {
   place-self: start center; }
@@ -328,14 +335,16 @@ body {
 @media only screen and (max-width: 50em) {
   .testimonials__img {
     grid-column: 1 / -1;
-    grid-row: 6 / 7; }
+    grid-row: 6 / 7;
+    grid-template-columns: [start-grid-col] 1fr [start-center-col] repeat(4, [start-col] 1fr [end-col]) [end-center-col] 1fr [end-grid-col];
+    grid-template-rows: [start-grid-row] 2fr [start-center-row] repeat(4, [start-row] 1fr [end-row]) [end-center-row] 2fr [end-grid-row]; }
   .testimonials__content {
     background-color: #f9f7f6;
     grid-column: 1 / -1;
     grid-row: 5 / 6; }
   .img-testimonials--2 {
-    width: 100% !important;
-    grid-row: 1 / 8 !important; } }
+    width: 85% !important;
+    grid-row: 3 / 5 !important; } }
 
 .homes {
   grid-column: grid-start / grid-end;
